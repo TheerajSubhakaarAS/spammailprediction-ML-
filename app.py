@@ -17,5 +17,13 @@ def predict_api():
     output = model.predict(data)
     return jsonify(output[0])
 
+@app.route('/predict',methods=['POST'])
+def predict():
+    data=[(x) for x in request.form.values()]
+    print(data)
+    output = model.predict(data)
+    return render_template("home.html",prediction_text="This mail is categorized as : {}".format(output))
+
+
 if __name__=="__main__":
     app.run(debug=True)

@@ -1,1 +1,21 @@
-<h1>Hello</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ml API</title>
+</head>
+<body>
+    <div class="hero">
+        <h1>Spam Mail Predition </h1>
+        <form action="{{url_for('predict')}}"method="post">
+            <input type="text" name="Message" placeholder="Enter the message content" /><br>
+            <button type="submit" class="btn-btn-primary">Predict</button>
+        </form>
+        <br>
+        <br>
+    </div>
+    {{prediction_text}}
+</body>
+</html>
